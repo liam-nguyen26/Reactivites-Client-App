@@ -1,0 +1,21 @@
+export interface Duck {
+  name: string;
+  numLegs: number;
+  makeSound: (sound: string) => void;
+}
+
+const duck1: Duck = {
+  name: "huhu",
+  numLegs: 2,
+  makeSound: (sound: any) => console.log(sound),
+};
+
+const duck2: Duck = {
+  name: "dewey",
+  numLegs: 2,
+  makeSound: (sound: any) => console.log(sound),
+};
+
+duck1.makeSound!("asd");
+
+export const ducks = [duck1, duck2];
