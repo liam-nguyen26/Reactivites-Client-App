@@ -16,6 +16,4 @@ const duck2: Duck = {
   makeSound: (sound: any) => console.log(sound),
 };
 
-duck1.makeSound!("asd");
-
 export const ducks = [duck1, duck2];
