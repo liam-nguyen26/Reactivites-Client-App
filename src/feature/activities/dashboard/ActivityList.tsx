@@ -1,20 +1,16 @@
 import React, { SyntheticEvent, useState } from "react";
 import { Button, Item, Label, Segment } from "semantic-ui-react";
 import { Activity } from "../../../app/models/activity";
+import { useStore } from "../../../app/stores/store";
 
 interface Props {
   activities: Activity[];
-  selectActivity: (id: string) => void;
   deleteActivity: (id: string) => void;
   submitting: boolean;
 }
 
-function ActivityList({
-  activities,
-  selectActivity,
-  deleteActivity,
-  submitting,
-}: Props) {
+function ActivityList({ activities, deleteActivity, submitting }: Props) {
+  const { activityStore } = useStore();
   const [target, setTarget] = useState("");
   const handelActivityDelete = (
     event: SyntheticEvent<HTMLButtonElement>,
@@ -38,7 +34,7 @@ function ActivityList({
                 </div>
                 <Item.Extra>
                   <Button
-                    onClick={() => selectActivity(activity.id)}
+                    onClick={() => activityStore.selectActivity(activity.id)}
                     floated="right"
                     content="View"
                     color="blue"

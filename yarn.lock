@@ -7615,6 +7615,16 @@
   "resolved" "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz"
   "version" "1.0.4"
 
+"mobx-react-lite@^3.2.2":
+  "integrity" "sha512-FxJJMqmHcnQYOVVs2DdjNHioGlFsXF5/9VHztS9NAfIT3DYrxNZzVi119Zr/OmlWKkWNkAsssSNzPkqautfL4A=="
+  "resolved" "https://registry.npmjs.org/mobx-react-lite/-/mobx-react-lite-3.2.2.tgz"
+  "version" "3.2.2"
+
+"mobx@^6.1.0", "mobx@^6.3.7":
+  "integrity" "sha512-X7yU7eOEyxIBk4gjIi2UIilwdw48gXh0kcZ5ex3Rc+COJsJmJ4SNpf42uYea3aUqb1hedTv5xzJrq5Q55p0P5g=="
+  "resolved" "https://registry.npmjs.org/mobx/-/mobx-6.3.7.tgz"
+  "version" "6.3.7"
+
 "move-concurrently@^1.0.1":
   "integrity" "sha1-viwAX9oy4LKa8fBdfEszIUxwH5I="
   "resolved" "https://registry.npmjs.org/move-concurrently/-/move-concurrently-1.0.1.tgz"
