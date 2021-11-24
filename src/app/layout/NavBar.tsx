@@ -2,12 +2,8 @@ import React from "react";
 import { Button, Container, Menu } from "semantic-ui-react";
 import { useStore } from "../stores/store";
 
-
-
 function NavBar() {
-
-  const {activityStore} = useStore();
-
+  const { activityStore } = useStore();
   return (
     <Menu inverted fixed="top">
       <Container>

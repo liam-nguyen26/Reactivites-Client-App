@@ -9,34 +9,22 @@ import ActivityList from "./ActivityList";
 
 interface Props {
   activities: Activity[];
-  createOrEdit: (activity: Activity) => void;
   deleteActivity: (id: string) => void;
   submitting: boolean;
 }
 //props: Props or destructing
-export default observer(function ActivityDashboard({
-  activities,
-  createOrEdit,
-  deleteActivity,
-  submitting,
-}: Props) {
+export default observer(function ActivityDashboard() {
   const { activityStore } = useStore();
   const { selectedActivity, editMode } = activityStore;
   return (
     <Grid>
       <Grid.Column width="10">
-        <ActivityList
-          activities={activities}
-          deleteActivity={deleteActivity}
-          submitting={submitting}
-        />
+        <ActivityList />
       </Grid.Column>
       <Grid.Column width="6">
         {selectedActivity && !editMode && <ActivityDetails />}
-        {editMode && (
-          <ActivityForm createOrEdit={createOrEdit} submitting={submitting} />
-        )}
+        {editMode && <ActivityForm />}
       </Grid.Column>
     </Grid>
   );
-}); 
+});

@@ -1,11 +1,14 @@
 import React from "react";
 import { Button, Card, Image } from "semantic-ui-react";
-import { Activity } from "../../../app/models/activity";
 import { useStore } from "../../../app/stores/store";
 
 function ActivityDetails() {
   const { activityStore } = useStore();
-  const { selectedActivity: activity, openForm, cancelSelectedActivity } = activityStore;
+  const {
+    selectedActivity: activity,
+    openForm,
+    cancelSelectedActivity,
+  } = activityStore;
 
   return (
     <Card fluid>
