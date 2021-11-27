@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { Container } from "semantic-ui-react";
 import ActivityDashboard from "../../feature/activities/dashboard/ActivityDashboard";
 import NavBar from "./NavBar";
@@ -12,12 +12,29 @@ import { ToastContainer } from "react-toastify";
 import NotFound from "../../feature/errors/NotFound";
 import ServerError from "../../feature/errors/ServerError";
 import LoginForm from "../../feature/users/LoginForm";
+import { useStore } from "../stores/store";
+import LoadingComponent from "./LoadingComponent";
+import ModalContainer from "../common/modals/ModalContainer";
 
 function App() {
   const location = useLocation();
+  const { commonStore, userStore } = useStore();
+
+  useEffect(() => {
+    if (commonStore.token) {
+      userStore.getUser().finally(() => commonStore.setAppLoaded());
+    } else {
+      commonStore.setAppLoaded();
+    }
+  }, [commonStore, userStore]);
+
+  if (!commonStore.appLoaded)
+    return <LoadingComponent content="Loading app.." />;
+
   return (
     <Fragment>
-      <ToastContainer position="bottom-right" hideProgressBar />
+      <ToastContainer position="top-right" hideProgressBar />
+      <ModalContainer />
       <Route exact path="/" component={HomePage} />
       {
         //any routes match with slash plus something else will match the routes
