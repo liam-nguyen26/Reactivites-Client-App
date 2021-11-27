@@ -10,7 +10,7 @@ import { Router } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.min.css";
 import { createBrowserHistory } from "history";
 
-export const history = createBrowserHistory(); // to use history outside component like agent.tsx
+export const history = createBrowserHistory(); // to use history outside component like agent.ts
 
 ReactDOM.render(
   //BrowserRouter auto provide history object
