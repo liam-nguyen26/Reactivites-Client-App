@@ -18,7 +18,7 @@ export default observer(function RegisterForm() {
   });
   // className="ui form error" nho de error vao neu nhu muon validation erros component xuat hien
   // boi vi do semantic qui dinh
-  // ben component cung phai khai bao la error
+  // ben component con cung phai khai bao la error
   //=====
   // vi dung formik de validate nen dung may cai component khac cua semantic ui phai cho no cai className
   return (
