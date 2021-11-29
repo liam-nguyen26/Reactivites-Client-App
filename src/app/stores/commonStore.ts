@@ -6,6 +6,10 @@ export default class CommonStore {
   token: string | null = window.localStorage.getItem("jwt");
   appLoaded = false;
 
+  //login ben userStore xong tra ve token
+  //lay token do set qua day thi no se tu react lai va set vao localstorage
+  //set xong thi goi token trong commonStore o interceptor roi goi api
+
   constructor() {
     makeAutoObservable(this);
 
@@ -20,6 +24,7 @@ export default class CommonStore {
         }
       }
     );
+
     //we do have auto run but do not need to use that here
   }
 
@@ -28,7 +33,6 @@ export default class CommonStore {
   };
 
   setToken = (token: string | null) => {
-    if (token) window.localStorage.setItem("jwt", token);
     this.token = token;
   };
 

@@ -36,6 +36,7 @@ function App() {
       <ToastContainer position="top-right" hideProgressBar />
       <ModalContainer />
       <Route exact path="/" component={HomePage} />
+
       {
         //any routes match with slash plus something else will match the routes
       }
